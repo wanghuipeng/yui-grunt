@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>upload</div>
+		<div class="container">
+			<h2 class="yui-title">上传图片（调用手机相册，相机）</h2>
+			<div class="upload">
+				<div class="icon-upload"></div>
+				<input type="file" accept="image/*;capture=camera">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/zepto.min.js" ></script>
+	<script type="text/javascript" src="../js/yui.js" ></script>
+</body>
+</html>
+

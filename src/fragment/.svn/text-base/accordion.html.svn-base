@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>accordion</div>
+		<div class="container">
+			<h2 class="yui-title">折叠面板</h2>
+			<div class="box-outer">
+				<div class="accordion">
+					<ul class="list">
+						<li class="list-item active">
+							<div class="accordion-header">
+								<a href="javascript:void(0)"><label class="list-label">表单</label><p class="list-text"><i class="list-arrow-d"></i></p></a>
+							</div>
+							<div class="accordion-box">
+								<ul class="list form-list">
+									<li class="list-item">
+										<label class="list-label">无边框</label>
+										<input type="text" class="list-input" />
+									</li>
+									<li class="list-item">
+										<label class="list-label">有focus</label>
+										<input type="text" class="list-input input-focus" />
+									</li>
+									<li class="list-item form-error">
+										<label class="list-label">错误提示</label>
+										<input type="text" class="list-input" /><i class="error-icon"></i>
+									</li>
+									<li class="list-item">
+										<label class="list-label">计数器</label>
+										<div class="input-number clearfix"><span class="del"></span><input class="num"><span class="add"></span></div>
+									</li>
+									<li class="list-item">
+										<textarea class="yui-textarea bd"></textarea>
+									</li>
+									<li class="list-item">
+										<div class="textarea-count">
+										    <textarea class="yui-textarea"></textarea>
+										    <span class="count" id="count">30</span>
+										</div>
+									</li>
+									<li class="list-item">
+										<label class="list-label">年月日时分</label>
+										<input type="datetime-local" class="list-input" />
+									</li>
+									<li class="list-item">
+										<label class="list-label">年月日</label>
+										<input type="date" class="list-input" />
+									</li>
+									<li class="list-item">
+										<label class="list-label">年月</label>
+										<input type="month" class="list-input" />
+									</li>
+									<li class="list-item">
+										<label class="list-label">时间</label>
+										<input type="time" class="list-input" />
+									</li>
+									<li class="list-item">
+										<label class="list-label">选择</label>
+										<div class="yui-select-sty">
+											<select class="yui-select">
+												<option value="0">请选择</option>
+							                    <option value="1">微信号</option>
+							                    <option value="2">QQ号</option>
+							                    <option value="3">Email</option>
+							                </select>
+							                <i class="arrow-select"></i>
+										</div>
+									</li>
+									<li class="box">
+										<button type="button" class="btn btn-danger btn-block showtip">提交</button>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="accordion-header">
+							    <a href="javascript:void(0)"><label class="list-label">文字排版</label><p class="list-text"><i class="list-arrow-d"></i></p></a>
+							</div>
+							<div class="accordion-box">
+								<div class="box">
+									<p class="h1">h1.heading</p>
+									<p class="h2">h2.heading</p>
+									<p class="h3">h3.heading</p>
+									<p class="h4">h4.heading</p>
+									<p class="h5">h5.heading</p>
+									<p class="h6">h6.heading</p>
+									<p>p.yui框架</p>
+								</div>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="accordion-header">
+							   	<a href="javascript:void(0)"><label class="list-label">按钮</label><p class="list-text"><i class="list-arrow-d"></i></p></a>
+							</div>
+						    <div class="accordion-box">
+								<div class="box">
+									<a class="btn btn-default">按钮（a,default）</a>
+									<button type="button" class="btn btn-default">按钮（button,default）</button>
+									<input type="button" value="按钮（input,default）" class="btn btn-default" />
+									<button type="button" class="btn btn-primary">按钮（primary）</button>
+									<button type="button" class="btn btn-warn">按钮（warn）</button>
+									<button type="button" class="btn btn-success">按钮（success）</button>
+									<button type="button" class="btn btn-danger btn-block">按钮（danger,block）</button>
+									<button type="button" class="btn btn-info btn-mini">按钮（btn-info,btn-mini）</button>
+									<button type="button" class="btn btn-link">按钮（link）</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+</body>
+</html>

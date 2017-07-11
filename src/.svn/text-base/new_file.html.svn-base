@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="js/zepto.min.js" ></script>
+<script type="text/javascript" src="js/yui.js" ></script>
+</head>
+<body>
+
+<details>
+<summary>Copyright 1999-2011.</summary>
+<p> - by Refsnes Data. All Rights Reserved.</p>
+<p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+</details>
+
+<p><b>注意：</b>目前只有 Chrome 和 Safari 6 支持 summary 标签。</p>
+
+</body>
+</html>

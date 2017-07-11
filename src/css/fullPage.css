@@ -1,0 +1,19 @@
+.page {text-align: center; font: 50px "Microsoft Yahei"; color: #fff;position: relative;}
+.fullPage-wp.anim {-webkit-transition: all 500ms ease-out 0s;transition: all 500ms ease-out 0s;}
+.page0{background: url(../images/fullPage/00.png) no-repeat;background-size:cover;background-position: 0 -60px;}
+.page1{background: url(../images/fullPage/01.png) no-repeat;background-size:cover;background-position: 0 -30px;}
+.page2{background: url(../images/fullPage/02.png) no-repeat;background-size:cover;background-position: 0 -50px;}
+.page3{background: url(../images/fullPage/03.png) no-repeat;background-size:cover;background-position: 0 -40px;}
+.page4{background: url(../images/fullPage/04.png) no-repeat;background-size:cover;background-position: 0 -25px;position: relative;}
+.page4 .number-input,.page4 .btn{position: absolute;left: 50%;margin-left: -40%;width: 80%;border-radius: 20px;box-shadow: none;border: none;padding: 6px 0;text-align: center;font-size: 16px;}
+.number-input{background-color: #fff;bottom: 85px;-webkit-user-select: text;}
+.btn{background-color: #ffba3a;color: #fff;bottom: 35px;font-weight: 700;}
+.btn:hover{background-color: #fcc55f;}
+.btn:focus{background-color: #de9919;}
+.tip{color: #f1c694;font-size: 12px;bottom: 10px;position: absolute;width: 100%;}
+.form {position: absolute;width: 100%;bottom: 0;}
+@media only screen and (min-width:359px) {.form{bottom: 12%;}}
+.wp{position: absolute;top: 0;left: 0;right: 0;bottom: 0;overflow: hidden;}
+.start {position: absolute;width: 40px;height: 20px;left: 50%;margin-left: -20px;bottom: 5px;display: none;}
+.start i {font-style: normal;color: #ccc;display: block;width: 44px;height: 19px;position: absolute;top: 0;background: url(../images/fullPage/start.png) center no-repeat;background-size: 50%; -webkit-animation: fadeInUp 1s infinite ease-out; animation: fadeInUp 1s infinite ease-out;}
+@-webkit-keyframes fadeInUp{from{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}to{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInUp{from{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}to{opacity:1;-webkit-transform:none;transform:none}}.fadeInUp{-webkit-animation-name:fadeInUp;animation-name:fadeInUp}

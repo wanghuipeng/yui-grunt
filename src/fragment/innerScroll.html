@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>innerScroll</div>
+		<div class="container">
+			<h2 class="yui-title">innerScrollVert（垂直弹性--android不兼容）</h2>
+			<div class="innerScrollVert">
+				<ul class="list">
+					<li class="list-item list-divider"><label class="list-label" id="A">A</label></li>
+					<li class="list-item"><label class="list-label">阿富汗机场</label></li>
+					<li class="list-item"><label class="list-label">阿拉伯机场</label></li>
+					<li class="list-item"><label class="list-label">阿根廷机场</label></li>
+					<li class="list-item list-divider"><label class="list-label" id="B">B</label></li>
+					<li class="list-item"><label class="list-label">巴拉圭机场</label></li>
+					<li class="list-item"><label class="list-label">北京首都国际机场</label></li>
+					<li class="list-item"><label class="list-label">包头机场</label></li>
+					<li class="list-item list-divider"><label class="list-label" id="C">C</label></li>
+					<li class="list-item"><label class="list-label">长白山机场</label></li>
+					<li class="list-item"><label class="list-label">长春机场</label></li>
+					<li class="list-item"><label class="list-label">成都机场</label></li>
+					<li class="list-item"><label class="list-label">重庆机场</label></li>
+					<li class="list-item"><label class="list-label">常州机场</label></li>
+					<li class="list-item"><label class="list-label">赤峰机场</label></li>
+					<li class="list-item list-divider"><label class="list-label" id="D">D</label></li>
+					<li class="list-item"><label class="list-label">大理机场</label></li>
+					<li class="list-item"><label class="list-label">大连机场</label></li>
+					<li class="list-item"><label class="list-label">大庆机场</label></li>
+					<li class="list-item"><label class="list-label">大同机场</label></li>
+					<li class="list-item"><label class="list-label">敦煌机场</label></li>
+				</ul>
+			</div>
+			<h2 class="yui-title">innerScrollHoriz（水平弹性<span class="red">（用css实现）</span>）</h2>
+			<div class="innerScrollHoriz">
+				<div class="topTabs">
+					<ul>
+						<li>tab1</li>
+						<li>tab2</li>
+						<li>tab3</li>
+						<li>tab4</li>
+						<li>tab5</li>
+						<li>tab6</li>
+						<li>tab7</li>
+					</ul>
+				</div>
+			</div>
+			<h2 class="yui-title">innerScrollElastic（水平弹性<span class="red">（用js实现）</span>）</h2>
+			<div class="innerScrollElastic">
+				<div class="topTabs" >
+					<ul class="tabs-2-item">
+						<li class="current">tab1</li>
+						<li>tab2</li>
+					</ul>
+				</div>
+				<div class="tab-contents">
+					<div class="tab-item current">tab1...</div>
+					<div class="tab-item">tab2...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script>
+$(function(){
+	//innerScrollElastic（水平弹性（用js实现））
+    var touch={};
+    touch.current=0;
+    touch.lenght=1;
+    var touchElem=$(".innerScrollElastic .tab-contents")[0];
+    
+     
+    $(touchElem).unbind().bind("touchstart",function(e){
+        touch.x1 = e.touches[0].pageX;
+    }).bind("touchmove",function( e ){
+        touch.x2 = e.touches[0].pageX;
+        touch.x3 = touch.endx+(touch.x2-touch.x1);
+        $(this).css("-webkit-transform","translate3d("+touch.x3+"px, 0px, 0px)");
+        e.preventDefault();
+     
+    }).bind("touchend",function(e){
+        if(Math.abs(touch.x2 - touch.x1) >=30){
+            touch.i = touch.x2 - touch.x1 > 0 ? -1 : 1;
+            touch.current=touch.current+touch.i;
+            if(touch.current==-1){touch.current=0}else if (touch.current>=touch.lenght){touch.current=touch.lenght;}
+        }
+        //获取窗口的宽度
+        var winWidth = 0;
+		function findDimensions(){
+			if (window.innerWidth){
+				winWidth = window.innerWidth;
+			} else if((document.body) && (document.body.clientWidth)){
+				winWidth = document.body.clientWidth;
+			}
+			return winWidth;
+		}
+        findDimensions();
+		window.onresize = findDimensions;
+        touch.endx=touch.current*-300;
+        move($(this),"-"+winWidth,touch.current);
+        moveli(touch.current);
+     
+    }).bind('touchcancel', function(){
+    });
+    
+});
+
+function move(elem,targetW,current){
+    elem.animate({
+        translate3d: targetW *current + "px,0,0"
+      },300,'steps',function(){
+    });
+}
+function moveli(current){
+    $(".innerScrollElastic ul>li").each(function(){
+        $(this).removeClass("current");
+    })
+    $(".innerScrollElastic .tab-contents .tab-item").each(function(){
+        $(this).removeClass("current");
+    })
+    $(".innerScrollElastic ul>li").eq(current).addClass("current");
+    $(".innerScrollElastic .tab-contents .tab-item").eq(current).addClass("current");
+}
+</script>
+</body>
+</html>

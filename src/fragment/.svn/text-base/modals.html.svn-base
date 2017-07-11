@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>modals</div>
+		<div class="container">
+			<h2 class="yui-title">模态弹框</h2>
+			<div class="box">
+				<button type="button" data-role="yui-alert" class="btn btn-info showModal" onclick="yui_alert('这是alert的title','这是alert的text')">alert</button>
+				<button type="button" data-role="yui-confirm" class="btn btn-success showModal" onclick="yui_confirm('这是confirm的title','这是confirm的text','我知道了','谢谢！')">confirm</button>
+				<button type="button" data-role="yui-confirm" class="btn btn-default showModal" onclick="yui_confirm('呵呵哒','这是呵呵哒','呵呵呵呵','呵呵呵呵！')">confirm</button>
+				<button type="button" data-role="yui-prompt" class="btn btn-primary showModal" onclick="yui_prompt('这是prompt的title','这是prompt的text','你刚才填写了文本框','谢谢！','填写的值为：','')">prompt</button>
+				<button type="button" data-role="yui-message" class="btn btn-danger" onclick="yui_message('请输入搜索关键字',3,true)">message</button>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script type="text/javascript" src="../js/modals.js" ></script>
+</body>
+</html>

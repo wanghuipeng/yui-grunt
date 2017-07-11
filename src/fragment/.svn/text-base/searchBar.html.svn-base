@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>searchBar</div>
+		<div class="container">
+			<h2 class="yui-title">搜索框</h2>
+			<div class="pd10-15">
+				<form>
+					<div class="search-input">
+						<input type="text" type="search" placeholder="搜索" /><i class="icon-search"></i>
+						<a href="javascript:void(0)" class="cancel">取消</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+</html>

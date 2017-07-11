@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>toast</div>
+		<div class="container">
+			<h2 class="yui-title">提示</h2>
+			<div class="box">
+				<button class="btn btn-primary btn-block btn-toast" data-target="send-success">发送成功</button>
+				<button class="btn btn-danger btn-block btn-toast" data-target="loading">数据加载中</button>
+			</div>
+			<h2 class="yui-title">操作成功</h2>
+			<div class="box">
+				<div class="operate-success">
+					<i class="circle-ok"></i>
+					<p class="main-p">操作成功</p>
+					<p class="sub-p">这里还有什么要提示的吗？</p>
+					<div class="box">
+						<button class="btn btn-primary btn-block">确定</button>
+					    <button class="btn btn-default btn-block">取消</button>
+					</div>
+					<ul class="flex-group">
+						<li class="pd10-15"><button class="btn btn-primary btn-block">确定</button></li>
+						<li class="pd10-15"><button class="btn btn-default btn-block">取消</button></li>
+					</ul>
+			    </div>
+			    <div class="operate-fail">
+					<i class="circle-ok"></i>
+					<p class="main-p">操作失败</p>
+					<p class="sub-p">这里还有什么要提示的吗？</p>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<!--toast（发送成功）-->
+	<div class="toast hide" id="send-success" data-lost="true">
+		<div class="toat-content">
+			<i class="circle-ok"></i>
+			<p>发送成功</p>
+		</div>
+	</div>
+	<!--toast（数据加载中）-->
+	<div class="toast hide" id="loading" data-lost="true">
+		<div class="toat-content">
+			<i class="icon-loading"></i>
+			<p>数据加载中</p>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script>
+$(function(){
+	//toast弹出提示
+	$(".btn-toast").click(function(){
+		var _id = $(this).data("target");
+		$("#"+_id).show();
+		var or = $("#"+_id).data("lost");
+		lost(or,$("#"+_id));
+	});
+});
+//根据data-lost的值判断是否需要1s后消失
+function lost(or,role){
+	var time,or;
+	switch(or){
+		case true:{
+			setTimeout(function(){
+				$(role).hide();
+			},1000);
+		};
+		break;
+		case false:
+		default:{};
+	}
+}
+</script>
+</body>
+</html>

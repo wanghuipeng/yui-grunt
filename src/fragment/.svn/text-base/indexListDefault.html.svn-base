@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>indexListDefault</div>
+		<div class="container">
+			<h2 class="yui-title">索引列表</h2>
+			<div class="indexList" id="indexList">
+				<ul class="list">
+				</ul>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script type="text/javascript" src="../js/indexList.js" ></script>
+<script type="text/javascript" src="../js/data.js" ></script>
+<script>
+	//字母索引导航栏
+	var app = app || {};
+
+	app.ItemList = function (data) {
+		var list = [];
+		var map = {};
+		var html;
+	
+		html = data.map(function (item) {
+			var i = item.lastIndexOf(' ');
+			var en = item.slice(0, i);
+			var cn = item.slice(i + 1);
+			var ch = en[0];
+			if (map[ch]) {
+				return '<li class="list-item">' + en + '<br>' + cn + '</li>';
+			} else {
+				map[ch] = true;
+				return '<li class="list-item" data-ch="' + ch + '">' + en + '<br>' + cn + '</li>';
+			}
+		}).join('');
+	
+		var elItemList = document.querySelector('#indexList ul');
+		elItemList.innerHTML = html;
+	
+		return {
+			gotoChar: function (ch) {
+				if (ch === '*') {
+					elItemList.scrollTop = 0;
+				} else if (ch === '#') {
+					elItemList.scrollTop = elItemList.scrollHeight;
+				} else {
+					var target = elItemList.querySelector('[data-ch="' + ch + '"]');
+					if (target) {
+						target.scrollIntoView();
+					}
+				}
+			}
+		}
+	}
+	
+	app.main = function () {
+		var itemList = app.ItemList(app.data);
+		new IndexSidebar().on('charChange', itemList.gotoChar);
+	}
+	
+	app.main();
+</script>
+</body>
+</html>

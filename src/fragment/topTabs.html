@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="tabs.html" class="icon-return"></a>topTabs</div>
+		<div class="container">
+			<h2 class="yui-title">顶部选项卡(四项，三项，二项)</h2>
+			<!--四项-->
+			<div class="topTabs">
+				<ul class="tabs-4-item">
+					<li class="current">tab1</li>
+					<li>tab2</li>
+					<li>tab3</li>
+					<li>tab4</li>
+				</ul>
+			</div>
+			<div class="tab-contents">
+				<div class="tab-item current">tab1...</div>
+				<div class="tab-item">tab2...</div>
+				<div class="tab-item">tab3...</div>
+				<div class="tab-item">tab4...</div>
+			</div>
+			<!--三项-->
+			<div class="topTabs">
+				<ul class="tabs-3-item">
+					<li class="current">tab1</li>
+					<li>tab2</li>
+					<li>tab3</li>
+				</ul>
+			</div>
+			<div class="tab-contents">
+				<div class="tab-item current">tab1...</div>
+				<div class="tab-item">tab2...</div>
+				<div class="tab-item">tab3...</div>
+			</div>
+			<!--二项-->
+			<div class="topTabs">
+				<ul class="tabs-2-item">
+					<li class="current">tab1</li>
+					<li>tab2</li>
+				</ul>
+			</div>
+			<div class="tab-contents">
+				<div class="tab-item current">tab1...</div>
+				<div class="tab-item">tab2...</div>
+			</div>
+			<h2 class="yui-title">选项卡(底部border可滑动)</h2>
+			<div class="topTabs borderTabs">
+				<ul class="tabs-2-item clearfix">
+					<li class="current">tab1</li>
+					<li>tab2</li>
+				</ul>
+				<div class="slider-border current0"></div>
+			</div>
+			<div class="tab-contents">
+				<div class="tab-item current">tab1...</div>
+				<div class="tab-item">tab2...</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script>
+$(function(){
+	//选项卡切换
+	$('.topTabs>ul li').click(function(){
+		var _index = $('.topTabs>ul li').index(this);
+		$(this).addClass('current').siblings().removeClass('current');
+		$('.tab-contents .tab-item').eq(_index).addClass('current').siblings().removeClass('current');
+	});
+	//选项卡border互动切换
+	$(".borderTabs li").click(function(){
+		var _index = $(this).index();
+		$(".slider-border").toggleClass("current0").toggleClass("current1");
+	});
+});
+</script>
+</body>
+</html>

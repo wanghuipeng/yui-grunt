@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>waterFall</div>
+		<div class="container">
+			<h2 class="yui-title">动态瀑布流（列数自适应）</h2>
+            <div class="waterFall">
+                <div class="water-item"></div>
+                <div class="water-item"></div>
+                <div class="water-item" style="height: 245px;"></div>
+                <div class="water-item"></div>
+                <div class="water-item" style="height: 290px;"></div>
+                <div class="water-item"></div>
+                <div class="water-item" style="height: 140px;"></div>
+                <div class="water-item" style="height: 200px"></div>
+                <div class="water-item" style="height: 150px"></div>
+                <div class="water-item"></div>
+                <div class="water-item" style="height: 220px"></div>
+                <div class="water-item" style="height: 205px"></div>
+                <div class="water-item"></div>
+                <div class="water-item"></div>
+                <div class="water-item"></div>
+                <div class="water-item"></div>
+                <div class="waterFallImg">
+	                <div class="water-item"><span>1</span></div>
+	                <div class="water-item"><span>2</span></div>
+	                <div class="water-item" style="height: 245px;"><span>3</span></div>
+	                <div class="water-item"><span>4</span></div>
+	                <div class="water-item" style="height: 290px;"><span>5</span></div>
+	                <div class="water-item"></div>
+	                <div class="water-item"></div>
+	                <div class="water-item" style="height: 140px;"><span>6</span></div>
+	                <div class="water-item"></div>
+	                <div class="water-item" style="height: 200px"><span>7</span></div>
+	                <div class="water-item"></div>
+	                <div class="water-item" style="height: 150px"><span>8</span></div>
+	                <div class="water-item"></div>
+	            </div>
+            </div>
+            <h2 class="yui-title">动态瀑布流（列数固定）</h2>
+            <div class="waterFall-2">
+            	<ul class="clearfix">
+            		<li>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (1).jpg" />
+            			</div>
+		                <div class="water-item-2">
+            				<img src="../images/data/dataimg (2).jpg" />
+            			</div>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (3).jpg" />
+            			</div>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (5).jpg" />
+            			</div>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (4).jpg" />
+            			</div>
+            		</li>
+            		<li>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (5).jpg" />
+            			</div>
+		                <div class="water-item-2">
+            				<img src="../images/data/dataimg (6).jpg" />
+            			</div>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (7).jpg" />
+            			</div>
+		                <div class="water-item-2">
+            				<img src="../images/data/dataimg (8).jpg" />
+            			</div>
+            			<div class="water-item-2">
+            				<img src="../images/data/dataimg (2).jpg" />
+            			</div>
+            		</li>
+            	</ul>
+            </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script>
+$(function() {
+    //瀑布流
+    miniwaterFall('.waterFall', '.water-item', 6, null,
+        function() {
+            var d = $('.waterFall');
+            d.css("opacity","inherit");
+        }
+    );
+    window.addEventListener('resize', function() {
+        miniwaterFall('.waterFall', '.water-item');
+    }); 
+});
+
+(function(exports){
+  function miniwaterFall(containerSelector, itemSelector, gutter, animate, done) {
+    var forEach = Array.prototype.forEach;
+    var containerEle = document.querySelector(containerSelector);
+    var itemsNodeList = document.querySelectorAll(itemSelector);
+    gutter = gutter || 6;
+    containerEle.style.width = '';
+    var containerWidth = containerEle.getBoundingClientRect().width;
+    var firstChildWidth = itemsNodeList[0].getBoundingClientRect().width + gutter;
+    var cols = Math.max(Math.floor((containerWidth - gutter) / firstChildWidth), 1);
+    var count = 0;
+    containerWidth = (firstChildWidth * cols + gutter) + 'px';
+    containerEle.style.width = containerWidth;
+    
+    for (var itemsGutter = [], itemsPosX = [], g = 0; g < cols; g++) {
+      itemsPosX.push(g * firstChildWidth + gutter);
+      itemsGutter.push(gutter);
+    }
+
+    forEach.call(itemsNodeList, function(item){
+      var itemIndex = itemsGutter.slice(0).sort(function (a, b) {
+        return a - b;
+      }).shift();
+      itemIndex = itemsGutter.indexOf(itemIndex);
+      var posX = itemsPosX[itemIndex];
+      var posY = itemsGutter[itemIndex];
+      var transformProps = [
+        'webkitTransform', 
+        'MozTransform', 
+        'msTransform',
+        'OTransform', 
+        'transform'
+      ];
+      if (!animate) {
+        forEach.call(transformProps, function(transform){
+          item.style[transform] = 'translate(' + posX + 'px,' + posY + 'px)';
+        });  
+      }
+      itemsGutter[itemIndex] += item.getBoundingClientRect().height + gutter;
+      count = count + 1;
+      if (animate) {
+        return animate(item, posX, posY, count);
+      }
+    });
+
+    var containerHeight = itemsGutter.slice(0).sort(function (a, b) {
+      return a - b;
+    }).pop();
+
+    containerEle.style.height = containerHeight + 'px';
+
+    if (typeof done === 'function'){
+      done();
+    }
+  }
+
+  if (typeof define === 'function' && define.amd) {
+    define(function() { return miniwaterFall; });
+  } else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = miniwaterFall;
+  } else {
+    exports.miniwaterFall = miniwaterFall;
+  }
+
+})(this);
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/><meta name="renderer" content="webkit">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>badge</div>
+		<div class="container">
+			<h2 class="yui-title">徽章</h2>
+			<div class="box">
+				<button type="button" class="btn btn-default">default<span class="yui-badge ml5">1222</span></button>
+				<button type="button" class="btn btn-primary">primary<span class="yui-badge ml5">1222</span></button>
+				<button type="button" class="btn btn-warn">warn<span class="yui-badge ml5">1222</span></button>
+				<button type="button" class="btn btn-success">success<span class="yui-badge ml5">1222</span></button>
+				<button type="button" class="btn btn-danger">danger<span class="yui-badge ml5">1222</span></button>
+				<button type="button" class="btn btn-info">btn-info<span class="yui-badge ml5">1222</span></button>
+				<button type="button" class="btn btn-link">link<span class="yui-badge ml5">1222</span></button>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/require.js" data-main="../js/main"  defer async="true" ></script>
+</body>
+</html>

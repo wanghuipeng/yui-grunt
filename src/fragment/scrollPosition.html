@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<script src="http://blog.163.com/yhwwen@126/blog/../js/vendor/modernizr-2.6.2.min.js"></script>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="scollAbout.html" class="icon-return"></a>scrollPosition</div>
+		<div class="container">
+			<h2 class="yui-title">滚动定位</h2>
+			<ul class="list form-list">
+				<li class="list-item form-error">
+					<label class="list-label">错误提示</label>
+					<input type="text" class="list-input" /><i class="error-icon"></i>
+				</li>
+				<li class="list-item">
+					<label class="list-label">计数器</label>
+					<div class="input-number clearfix"><span class="del"></span><input class="num"><span class="add"></span></div>
+				</li>
+				<li class="list-item">
+					<div class="box pt0 pb0">
+						<textarea class="yui-textarea bd"></textarea>
+					</div>
+				</li>
+				<li class="list-item">
+					<div class="box pt0 pb0">
+						<div class="textarea-count">
+						    <textarea class="yui-textarea" id="myarea" onKeyUp="keypress()" onblur="keypress()"></textarea>
+						    <span class="count" id="count">30</span>
+						</div>
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">日期</label>
+					<input type="date" class="list-input" />
+				</li>
+				<li class="list-item">
+					<label class="list-label">时间</label>
+					<input type="time" class="list-input" />
+				</li>
+				<li class="list-item">
+					<label class="list-label">选择</label>
+					<div class="yui-select-sty">
+						<select class="yui-select">
+		                    <option value="1">微信号</option>
+		                    <option value="2">QQ号</option>
+		                    <option value="3">Email</option>
+		                </select>
+		                <i class="arrow-select"></i>
+					</div>
+				</li>
+				<li class="box bottom-fixed">
+					<button type="button" class="btn btn-danger btn-block showtip">提交</button>
+				</li>
+				<li class="list-item form-error">
+					<label class="list-label">错误提示</label>
+					<input type="text" class="list-input" /><i class="error-icon"></i>
+				</li>
+				<li class="list-item">
+					<label class="list-label">计数器</label>
+					<div class="input-number clearfix"><span class="del"></span><input class="num"><span class="add"></span></div>
+				</li>
+				<li class="list-item">
+					<div class="box pt0 pb0">
+						<textarea class="yui-textarea bd"></textarea>
+					</div>
+				</li>
+				<li class="list-item">
+					<div class="box pt0 pb0">
+						<div class="textarea-count">
+						    <textarea class="yui-textarea" id="myarea" onKeyUp="keypress()" onblur="keypress()"></textarea>
+						    <span class="count" id="count">30</span>
+						</div>
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">日期</label>
+					<input type="date" class="list-input" />
+				</li>
+				<li class="list-item">
+					<label class="list-label">时间</label>
+					<input type="time" class="list-input" />
+				</li>
+				<li class="list-item">
+					<label class="list-label">选择</label>
+					<div class="yui-select-sty">
+						<select class="yui-select">
+		                    <option value="1">微信号</option>
+		                    <option value="2">QQ号</option>
+		                    <option value="3">Email</option>
+		                </select>
+		                <i class="arrow-select"></i>
+					</div>
+				</li>
+			</ul>
+		</div>
+    </div>
+    <div class="errortip" style="">格式不对</div>
+</body>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script>
+$(function(){
+	//bottom fixed
+	var bottom_fixed_top=$('.bottom-fixed').offset().top;
+	var win_h=$(window).height();
+	var min_h=bottom_fixed_top-win_h;
+	$(".bottom-fixed").css({"position":"fixed"});
+	function scroll_monitor(){
+		if($(window).scrollTop()>=min_h){
+			$(".bottom-fixed").css({"position":"static"});
+	        $(".bottom-fixed").addClass("in");
+		}
+		else {
+			$(".bottom-fixed").css({"position":"fixed"});
+		    $(".bottom-fixed").removeClass("in");
+		}
+	}
+	$(window).scroll(scroll_monitor); 
+	document.addEventListener("touchmove", scroll_monitor);
+});
+</script>
+</html>

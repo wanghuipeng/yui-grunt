@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>flex</div>
+		<div class="container">
+			<h2 class="yui-title">传统布局</h2>
+			<!--传统布局-->
+			<ul class="tabs-2-item clearfix"> 
+				<li class="pd10-15"><button class="btn btn-primary btn-block">确定</button></li>
+				<li class="pd10-15"><button class="btn btn-default btn-block">取消</button></li>
+			</ul>
+			<h2 class="yui-title">flex布局（弹性布局）</h2>
+			<!--flex布局-->
+			<ul class="flex-group">
+				<li class="pd10-15"><button class="btn btn-primary btn-block">确定</button></li>
+				<li class="pd10-15"><button class="btn btn-default btn-block">取消</button></li>
+			</ul>
+			<h2 class="yui-title">缩略图</h2>
+			<div class="box">
+				<div class="thumbnail w-300">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+			</div>
+			<h2 class="yui-title">缩略图(一行两列)</h2>
+			<ul class="tabs-2-item thumbnail-ul">
+				<li>
+					<div class="thumbnail">
+						<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+						<h3 class="thumbnail-header">缩略图标题</h3>
+						<p class="thumbnail-text hideLine-1">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+						<ul class="thumbnail-group">
+							<li class="pd10-15"><button class="btn btn-primary btn-mini">确认</button> </li>
+							<li class="pd10-15"><button class="btn btn-default btn-mini">取消</button> </li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="thumbnail">
+						<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+						<h3 class="thumbnail-header">缩略图标题</h3>
+						<p class="thumbnail-text  hideLine-2">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+						<ul class="thumbnail-group">
+							<li class="pd10-15"><button class="btn btn-primary btn-mini">确认</button> </li>
+							<li class="pd10-15"><button class="btn btn-default btn-mini">取消</button> </li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+</body>
+</html>

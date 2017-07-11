@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="stylesheet" type="text/css" href="../css/fullPage.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="imgLoading.html" class="icon-return"></a>imgBeforeLoad</div>
+		<div class="container">
+			<h2 class="yui-title">图片加载前的loading</h2>
+			<!-- loading-->
+			<div class="loading">
+				<div class="spinner">
+					<div class="bounce1">优</div>
+					<div class="bounce2">蓝</div>
+					<div class="bounce3">网</div>
+				</div>
+			</div>
+			<div class="wp">
+			    <div class="wp-inner fullPage-wp">
+					<div class="page page0"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page1"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page2"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page3"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script type="text/javascript" src="../js/zepto.fullpage.min.js" ></script>
+<script>
+	$(function(){
+		//fullPage
+		$('.wp-inner').fullpage();
+	});
+	//图片预加载
+	(function() {
+		//refreshRem
+		function refreshRem() {
+			var docEl = window.document.documentElement;
+			var width = docEl.getBoundingClientRect().width;
+			var rootSize = width / 10;
+			docEl.style.fontSize = rootSize + 'px';
+		}
+		refreshRem();
+		// 图片加载计算
+		function loading(par) {
+			var sum = par.srcArray.length || 0;
+			var i = 0;
+			if(sum != 0) {
+				var len = sum - 1;
+				var imgs = [];
+				while(len >= 0) {
+					imgs.push(new Image());
+					imgs[i].src = par.srcArray[len];
+					imgs[i].onload = par.fun || null;
+					imgs[i].onerror = par.fun || null;
+					i++;
+					len--;
+				}
+			}
+		}
+		var par = {};
+		par.srcArray = [
+			'00.png',
+			'01.png',
+			'02.png',
+			'03.png',
+			'04.png'
+		];
+		var href = window.location.host;
+		for(var i = par.srcArray.length - 1; i >= 0; i--) {
+			par.srcArray[i] = '../images/fullPage/' + par.srcArray[i];
+		};
+		var loaded = 0;
+		var len = par.srcArray.length;
+		par.fun = function() {
+			if(++loaded / len == 1) {
+				$('.loading').hide();
+			};
+		};
+		loading(par);
+	})();
+</script>
+</body>
+</html>

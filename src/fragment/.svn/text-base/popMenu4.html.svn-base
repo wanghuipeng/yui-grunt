@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header">
+			<a href="popMenu.html" class="icon-return"></a>筛选弹出菜单
+			<a href="javascript:void(0)" class="menu"><i class="icon-menu"></i></a>
+		</div>
+		<div class="container">
+			<ul class="yui-select-wrapper">
+				<li data-role="yui-select-job">岗位</li>
+				<li data-role="yui-select-money">薪资</li>
+				<li data-role="yui-select-sort">时间</li>
+			</ul>
+			<!--岗位-->
+			<div class="yui-select" id="yui-select-job">
+				<ul class="list">
+					<li class="list-item">全部</li>
+					<li class="list-item">客服</li>
+					<li class="list-item">普工</li>
+					<li class="list-item">操作工</li>
+					<li class="list-item">客服</li>
+					<li class="list-item">普工</li>
+					<li class="list-item">操作工</li>
+					<li class="list-item">客服</li>
+					<li class="list-item">普工</li>
+					<li class="list-item">操作工</li>
+				</ul>
+			</div>
+			<!--岗位-->
+			<!--薪资-->
+			<div class="yui-select" id="yui-select-money">
+				<ul class="list">
+					<li class="list-item">全部</li>
+					<li class="list-item">3000~5000</li>
+					<li class="list-item">5000~7000</li>
+					<li class="list-item">7000~10000</li>
+				</ul>
+			</div>
+			<!--薪资-->
+			<!--排序-->
+			<div class="yui-select" id="yui-select-sort">
+				<ul class="list">
+					<li class="list-item">由早到晚</li>
+					<li class="list-item">由晚到早</li>
+				</ul>
+			</div>
+			<!--排序-->
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+</body>
+</html>

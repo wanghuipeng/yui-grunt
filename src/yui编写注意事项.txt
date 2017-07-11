@@ -1,0 +1,26 @@
+1)尽量少的颜色值
+2)尽量多的%
+3)尽量少的@media，放在样式表最底部，注意顺序
+4)尽量多的html5和css3
+5)至少改5次
+6)尽量少的图片加载
+7)至少20个UI组建，至少20个js组件
+8)padding和margin尽量不要同时用
+9)命名尽量简洁
+10)js用单引号
+11)文本换行勿用br
+12)最大宽度支持640px
+13)border-color:#e2e2e2
+14)background,padding,margin,border这些最好写在父级节点
+15)善用inherit
+16)padding: 10px 15px;
+17)每个功能组件都是单独的JS文件
+18)设置路由
+19)运用AMD模块加载器
+20)增加canvas模块
+21)尽量少用相对定位，少用z-index
+22)善用box-sizing
+23)border用细线，达到原生效果（解决方案0.5px或js控制或用background-image）
+24)有空的话写一个css3动态库
+25)合理利用硬件加速
+26)图片处理（雪碧图）

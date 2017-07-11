@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/><meta name="renderer" content="webkit">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<style>
+
+</style>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>label</div>
+		<div class="container">
+			<h2 class="yui-title">标签</h2>
+			<div class="box">
+				<span class="yui-label yui-label-default">default</span>
+			    <span class="yui-label yui-label-primary">primary</span>
+			    <span class="yui-label yui-label-success">success</span>
+			    <span class="yui-label yui-label-warn">warn</span>
+			    <span class="yui-label yui-label-danger">danger</span>
+			    <span class="yui-label yui-label-info">info</span>
+			</div>
+			<div class="box">
+				<p class="h1">h1.heading<span class="yui-label yui-label-default ml10">default</span></p>
+				<p class="h2">h2.heading<span class="yui-label yui-label-primary ml10">primary</span></p>
+				<p class="h3">h3.heading<span class="yui-label yui-label-success ml10">success</span></p>
+				<p class="h4">h4.heading<span class="yui-label yui-label-warn ml10">warn</span></p>
+				<p class="h5">h5.heading<span class="yui-label yui-label-danger ml10">danger</span></p>
+				<p class="h6">h6.heading<span class="yui-label yui-label-info ml10">info</span></p>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/require.js" data-main="../js/main"  defer async="true" ></script>
+</body>
+</html>

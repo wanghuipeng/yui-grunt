@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<style>
+	
+</style>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>dialog</div>
+		<div class="container">
+			<h2 class="yui-title">原生提示框</h2>
+            <div class="box">
+            	<button class="btn btn-danger btn-block" onclick="show_alert()">alert</button>
+            	<button class="btn btn-primary btn-block" onclick="show_confirm()">confirm</button>
+            	<button class="btn btn-success btn-block" onclick="show_prompt()">prompt</button>
+            </div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="scollAbout.html" class="icon-return"></a>scrollListener</div>
+		<div class="container">
+			<div class="topTabs scrollTabs" id="tabScroll">
+				<ul class="nav navbar-nav tabs-3-item">
+					<li class="active"><a href="#today">今天</a></li>
+					<li><a href="#tomorrow">明天</a></li>
+					<li><a href="#afterTomo">后天</a></li>
+				</ul>
+			</div>
+			<div class="scrollContent" data-offset="100" data-target="#tabScroll"  data-spy="scroll">
+				<h2 class="title text-center" id="today">今天</h2>
+				<div class="thumbnail pd10-15">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+				<div class="thumbnail pd10-15">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+				<h2 class="title text-center" id="tomorrow">明天</h2>
+				<div class="thumbnail pd10-15">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+				<div class="thumbnail pd10-15">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+				<h2 class="title text-center" id="afterTomo">后天</h2>
+				<div class="thumbnail pd10-15">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+				<div class="thumbnail pd10-15">
+					<img src="http://static.bootcss.com/www/assets/img/codeguide.png" />
+					<h3 class="thumbnail-header">缩略图标题</h3>
+					<p class="thumbnail-text">内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+					<ul class="thumbnail-group">
+						<li class="pd10-15"><button class="btn btn-primary">确认</button> </li>
+						<li class="pd10-15"><button class="btn btn-default">取消</button> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>-->
+<script type="text/javascript" src="../js/jquery.min.js" ></script>
+<script type="text/javascript" src="../js/scrollspy.min.js" ></script>
+<script>
+$(function(){
+	findDimensions();
+});
+var winHeight = 0;
+window.onresize = findDimensions;
+function findDimensions(){
+	//获取窗口高度
+	if (window.innerHeight){
+		winHeight = window.innerHeight;
+	} else if((document.body) && (document.body.clientHeight)){
+		winHeight = document.body.clientHeight;
+	}	
+	$(".scrollContent").css("height", winHeight-79);
+}
+</script>
+</body>
+</html>

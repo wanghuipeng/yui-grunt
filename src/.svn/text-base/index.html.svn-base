@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="css/yui.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="js/zepto.min.js" ></script>
+<script type="text/javascript" src="js/yui.js" ></script>
+<script>
+//文字大小自适应
+function fontsize_resize(){
+	var window_width=$(window).width();
+	if(window_width>=640){
+		$('html').css('font-size',20+'px');
+	}else{
+		$('html').css('font-size',20*window_width/640+'px');
+	}
+}
+fontsize_resize();
+$(window).resize(fontsize_resize);
+$(function(){
+	setTimeout(fontsize_resize,0);
+})
+</script>
+<style>
+/*文字大小自适应*/
+.page-wrapper{font-size: 1.2rem;}
+.page-name{font-size: 2.4rem;}
+/**/
+.done .cell-icon,.doing .cell-icon{background:url(images/ok.png) no-repeat;width: 30px;height: 30px;background-size:30px;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAC0CAYAAAAkairRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2RjU4MURFOTZEOUQxMUU2OTAyNUNCQjREMEE3NkUxQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2RjU4MURFQTZEOUQxMUU2OTAyNUNCQjREMEE3NkUxQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZGNTgxREU3NkQ5RDExRTY5MDI1Q0JCNEQwQTc2RTFDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZGNTgxREU4NkQ5RDExRTY5MDI1Q0JCNEQwQTc2RTFDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+C4Mf6wAACF5JREFUeNrsnUFSGzkU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);}
+.done .cell-p{color: #2bb7ab;font-size: 1.1rem;}
+.doing .cell-p{color: #ddd;font-size: 1.1rem;}
+.doing .cell-icon{background-position:0 -54px;}
+</style>
+<body>
+	<div class="page-wrapper">
+		<div class="hd">
+			<div class="inner">
+				<h1 class="page-name">YUI</h1>
+			    <p class="page-desc">移动端UI框架</p>
+			</div>
+		</div>
+		<div class="grid grid-3">
+			<a href="fragment/typography.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">文字排版</p>
+			</div>
+			</a>
+			<a href="fragment/button.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">按钮</p>
+			</div>
+			</a>
+			<a href="fragment/badge.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">徽章</p>
+		    </div>
+			</a>
+			<a href="fragment/label.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">标签</p>
+		    </div>
+			</a>
+			<a href="fragment/list.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">列表</p>
+			</div>
+			</a>
+			<a href="fragment/indexList.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">索引列表</p>
+		    </div>
+			</a>
+			<a href="fragment/table.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">table</p>
+		    </div>
+			</a>
+			<a href="fragment/media.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">媒体对象</p>
+			</div>
+			</a>
+			<a href="fragment/flex.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">flex</p>
+		    </div>
+			</a>
+			<a href="fragment/progress.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">进度条</p>
+			</div>
+			</a>
+			<a href="fragment/upload.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">上传（原生api）</p>
+		    </div>
+			</a>
+			<a href="fragment/searchBar.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">搜索</p>
+			</div>
+			</a>
+			<a href="fragment/range.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">滑块</p>
+		    </div>
+			</a>
+			<a href="fragment/timeline.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">时间轴</p>
+		    </div>
+			</a>
+			<a href="fragment/tabs.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">选项卡</p>
+		    </div>
+			</a>
+			<a href="fragment/carousel.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">轮播</p>
+		    </div>
+			</a>
+			<a href="fragment/footer.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">底部页脚</p>
+		    </div>
+			</a>
+			<a href="fragment/switch.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">开关</p>
+		    </div>
+			</a>
+			<a href="fragment/countdown.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">倒计时</p>
+		    </div>
+			</a>
+			<a href="fragment/pullRefresh.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">上拉加载，下拉刷新</p>
+		    </div>
+			</a>
+			<a href="fragment/accordion.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">折叠面板</p>
+		    </div>
+			</a>
+			<a href="fragment/fullPage.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">fullPage</p>
+		    </div>
+			</a>
+			<a href="fragment/returnTop.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">回到顶部</p>
+		    </div>
+			</a>
+			<a href="fragment/imgLoading.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">图片加载</p>
+		    </div>
+			</a>
+			<a href="fragment/popMenu.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">各种弹出菜单</p>
+		    </div>
+			</a>
+			<a href="fragment/innerScroll.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">内部弹性滑动</p>
+		    </div>
+			</a>
+			<a href="fragment/scollAbout.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">滚动相关</p>
+		    </div>
+			</a>
+			<a href="fragment/slideDel.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">侧滑删除</p>
+		    </div>
+			</a>
+			<a href="fragment/dragDrop.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">拖拽</p>
+		    </div>
+			</a>
+			<a href="fragment/waterFall.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">瀑布流</p>
+		    </div>
+			</a>
+			<a href="fragment/dialog.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">dialog原生</p>
+		    </div>
+			</a>
+			<a href="fragment/toast.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">提示</p>
+			</div>
+			</a>
+			<a href="fragment/modals.html">
+			<div class="cell done">
+				<div class="cell-icon"></div>
+				<p class="cell-p">模态弹框</p>
+		    </div>
+			</a>
+		</div> 
+	</div>
+</body>
+</html>

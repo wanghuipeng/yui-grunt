@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>carousel</div>
+		<div class="container">
+			<h2 class="yui-title">轮播（图片）</h2>
+			<div class="swipe-banner">
+				<div id="slider1" class="swipe">
+		            <ul class="swipe-wrap">
+		           		<li>
+		                     <a href="">
+								<img src="http://img.youlanw.com/o/img/tmp/2016080311310933Q4K.jpg" alt="上海福履信息技术有限公司">
+							</a>
+		                 </li>
+		                <li>
+		                     <a href="">
+								<img src="http://img.youlanw.com/o/img/tmp/20160806133451976GFL.jpg" alt="江苏大厂500现金红包抢翻天 ">
+							</a>
+		                 </li>
+		                <li>
+		                     <a href="">
+								<img src="http://img.youlanw.com/o/img/tmp/2016080411541460818U.jpg" alt=" 国安社区招聘国安侠">
+							</a>
+		                 </li>
+		            </ul>
+		            <ul class="slide-trigger center-trigger">
+		                <li></li>
+		                <li></li>
+		                <li></li>
+		            </ul>
+		        </div>
+		    </div>
+		    
+		    <h2 class="yui-title">轮播（图片+文字）</h2>
+			<div class="swipe-banner">
+				<div id="slider2" class="swipe">
+		            <ul class="swipe-wrap">
+		           		<li>
+		                    <a href="">
+								<img src="http://img.youlanw.com/o/img/tmp/2016080311310933Q4K.jpg" alt="上海福履信息技术有限公司">
+							    <p class="swipe-text">第一张图片描述</p>
+		                    </a>
+		                 </li>
+		                <li>
+		                    <a href="">
+								<img src="http://img.youlanw.com/o/img/tmp/20160806133451976GFL.jpg" alt="江苏大厂500现金红包抢翻天 ">
+							    <p class="swipe-text">第二张图片描述</p>
+		                    </a>
+		                 </li>
+		                <li>
+		                    <a href="">
+								<img src="http://img.youlanw.com/o/img/tmp/2016080411541460818U.jpg" alt=" 国安社区招聘国安侠">
+							    <p class="swipe-text">第三张图片描述</p>
+		                    </a>
+		                 </li>
+		            </ul>
+		            <ul class="slide-trigger">
+		                <li></li>
+		                <li></li>
+		                <li></li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/swipe.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script>
+$(function(){
+	//轮播（图片）
+    slider("slider1");
+    //轮播（图片+文字）
+    slider("slider2");
+});  
+</script>
+</body>
+</html>

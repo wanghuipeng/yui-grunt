@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<body>
+	<div class="page-wrapper">
+		<div class="header"><a href="../index.html" class="icon-return"></a>list</div>
+		<div class="container">
+			<h2 class="yui-title">列表（说明）</h2>
+			<ul class="list">
+				<li class="list-item">文本文本文本</li>
+				<li class="list-item"><label class="list-label">标题</label><p class="list-text"><a href="#">更多&gt;&gt;</a></p></li>
+				<li class="list-item"><label class="list-label">标题</label><p class="list-text">说明</p></li>
+			</ul>
+			<h2 class="yui-title">列表（图标，说明）</h2>
+			<ul class="list">
+				<li class="list-item"><label class="list-label"><i class="list-icon"></i>标题</label><p class="list-text">说明说明说明说明说</p></li>
+				<li class="list-item"><label class="list-label">标题</label><p class="list-text">说明</p></li>
+			</ul>
+		    <h2 class="yui-title">列表（跳转，图标，说明）</h2>
+			<ul class="list">
+				<a href="javascript:">
+					<li class="list-item access"><label class="list-label"><i class="list-icon"></i>标题</label><p class="list-text">说明说明说明说明说<i class="list-arrow-r"></i></p></li>
+				</a>
+			</ul>
+			<h2 class="yui-title">列表（跳转，图标）</h2>
+			<ul class="list">
+				<a href="javascript:">
+					<li class="list-item access"><label class="list-label"><i class="list-icon"></i>标题</label><p class="list-text"><i class="list-arrow-r"></i></p></li>
+				</a>
+			</ul>
+			<h2 class="yui-title">列表（表单）</h2>
+			<ul class="list form-list">
+				<li class="list-item">
+					<label class="list-label">无边框</label>
+					<input type="text" class="list-input" />
+				</li>
+				<li class="list-item">
+					<label class="list-label">有focus</label>
+					<input type="text" class="list-input input-focus" />
+				</li>
+				<li class="list-item form-error">
+					<label class="list-label">错误提示</label>
+					<input type="text" class="list-input" /><i class="error-icon"></i>
+				</li>
+				<li class="list-item">
+					<label class="list-label">计数器</label>
+					<div class="input-number clearfix"><span class="del"></span><input class="num"><span class="add"></span></div>
+				</li>
+				<li class="list-item">
+					<textarea class="yui-textarea bd"></textarea>
+				</li>
+				<li class="list-item">
+					<div class="textarea-count">
+					    <textarea class="yui-textarea" id="myarea" onKeyUp="keypress()" onblur="keypress()"></textarea>
+					    <span class="count" id="count">30</span>
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">年月日时分</label>
+					<div class="yui-select-sty">
+					    <input type="datetime-local" class="yui-select bd0" />
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">年月日</label>
+					<div class="yui-select-sty">
+					    <input type="date" class="yui-select bd0" />
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">年月</label>
+					<div class="yui-select-sty">
+					    <input type="month" class="yui-select bd0" />
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">时间</label>
+					<div class="yui-select-sty">
+					    <input type="time" class="yui-select bd0" />
+					</div>
+				</li>
+				<li class="list-item">
+					<label class="list-label">选择</label>
+					<div class="yui-select-sty">
+						<select class="yui-select">
+							<option value="0">请选择</option>
+		                    <option value="1">微信号</option>
+		                    <option value="2">QQ号</option>
+		                    <option value="3">Email</option>
+		                </select>
+		                <i class="arrow-select"></i>
+					</div>
+				</li>
+				<li class="list-item text-center">
+					<input type="tel" class="form-input" placeholder="请输入您的手机号" />
+				</li>
+				<li class="list-item text-center">
+					<input type="text" class="form-input" placeholder="请输入您的姓名" />
+				</li>
+				<li class="list-item text-center">
+					<input type="password" class="form-input" placeholder="请输入您的密码" />
+				</li>
+				<li class="list-item text-center">
+					<p><i class="ok-square ok-2 mr5"></i>您已同意该条款</p>
+				</li>
+				<li class="box">
+					<button type="submit" class="btn btn-danger btn-block showtip">提交</button>
+				</li>
+			</ul>
+			<h2 class="yui-title">checkbox（带文字说明）</h2>
+			<ul class="list">
+				<li class="list-item yui-switch-cell">
+					<label class="list-label">状态：<span class="switch-val">true</span></label>
+					<div class="list-text">
+						<div class="yui-switch yui-switch-cont pull-right in">
+							<div class="yui-switch-handle"></div>
+						</div>
+					</div>
+				</li>
+				<li class="list-item yui-switch-cell">
+					<label class="list-label">状态：<span class="switch-val">false</span></label>
+					<div class="list-text">
+						<div class="yui-switch yui-switch-cont pull-right">
+							<div class="yui-switch-handle"></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<h2 class="yui-title">radio（带文字说明）</h2>
+			<ul class="list">
+				<li class="list-item yui-switch-cell">
+					<label class="list-label">状态：<span class="switch-val">true</span></label>
+					<div class="list-text">
+						<div class="yui-switch yui-switch-cont pull-right in">
+							<div class="yui-switch-handle"></div>
+						</div>
+					</div>
+				</li>
+				<li class="list-item yui-switch-cell">
+					<label class="list-label">状态：<span class="switch-val">false</span></label>
+					<div class="list-text">
+						<div class="yui-switch yui-switch-cont pull-right">
+							<div class="yui-switch-handle"></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+    </div>
+    <div class="errortip" style="">格式不对</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+</body>
+</html>

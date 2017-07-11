@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>yui</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection"/>
+<link rel="stylesheet" type="text/css" href="../css/yui.css"/>
+<link rel="stylesheet" type="text/css" href="../css/fullPage.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="page-wrapper">
+		<div class="container">
+			<div class="wp">
+			    <div class="wp-inner fullPage-wp">
+					<div class="page page0"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page1"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page2"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page3"><span style="display: inline;" class="start"><i></i></span></div>
+					<div class="page page4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/yui.js" ></script>
+<script type="text/javascript" src="../js/zepto.fullpage.min.js" ></script>
+<script>
+$(function(){
+	//fullPage
+	$('.wp-inner').fullpage();
+});
+</script>
+</body>
+</html>
